@@ -1,11 +1,6 @@
-from .registry import model_entrypoint
+import sys
+import fairchem.core.models
 
-from .graph_attention_transformer import *
-from .graph_attention_transformer_md17 import *
-from .graph_attention_transformer_oc20 import *
+sys.modules['ocpmodels'] = fairchem.core
 
-from .dp_attention_transformer import *
-from .dp_attention_transformer_md17 import *
-from .dp_attention_transformer_oc20 import *
-
-from .equiformer_md17_dens import *
+# Now safe to import nets
